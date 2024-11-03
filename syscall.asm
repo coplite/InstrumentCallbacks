@@ -1,5 +1,5 @@
 section .text
-	global NtDelayExecution
+	global NtDelayExecution ; this is just direct syscall PoC
 	
 NtDelayExecution:	
 	mov r10, rcx
