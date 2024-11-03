@@ -55,7 +55,6 @@ void Hooker(CONTEXT* ctx)
 		bool SymbolLookupResult = SymFromAddr((HANDLE)-1, ctx->Rip, &Displacement, SymbolInfo);
 		if(SymbolLookupResult)
 		{
-
 			printf("Function: %s is located at 0x%p\n", SymbolInfo->Name, ctx->Rip-2);	
 		}
 		else
