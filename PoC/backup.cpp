@@ -109,4 +109,3 @@ int main()
 	
 	NtDelayExecution(false, &interval);
 }
-
