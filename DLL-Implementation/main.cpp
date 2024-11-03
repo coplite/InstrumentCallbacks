@@ -73,32 +73,6 @@ void Hooker(CONTEXT* ctx)
 	RtlRestoreContext(ctx, NULL);
 }
 
-
-
-/*
-int main()
-{
-	
-	SymSetOptions(SYMOPT_UNDNAME);
-	SymInitialize((HANDLE)-1, NULL, true);
-	
-	NtSetInformationProcess NtSetInfoProc = (NtSetInformationProcess)GetProcAddress(LoadLibraryA("ntdll.dll"), "NtSetInformationProcess");
-	if(NtSetInfoProc == NULL)
-	{
-		std::cout << "[-] Unable to resolve NtSetInformationProcess!!";
-		exit(-1);
-	}
-	PROCESS_INSTRUMENTATION_CALLBACK_INFORMATION InstrumentationCallbackInfo;
-
-	InstrumentationCallbackInfo.Version = 0; // 0 is x64 and 1 for x86
-	InstrumentationCallbackInfo.Reserved = 0;
-	InstrumentationCallbackInfo.Callback = (PVOID)(ULONG_PTR)proxy; // (PVOID)(DWORD64)Hooker or (PVOID)(ULONG_PTR)proxy
-
-	NtSetInfoProc((HANDLE)-1, (PROCESS_INFORMATION_CLASS)ProcessInstrumentationCallback, &InstrumentationCallbackInfo, sizeof(InstrumentationCallbackInfo));
-
-}
-*/
-
 bool __stdcall DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)
 {
 	static FILE *file = nullptr;
