@@ -11,10 +11,10 @@ proxy:
 	mov r10, rcx ; save rcx
 	sub rsp, 0x4d0 ; CONTEXT structure size
 	and rsp, -16 ; align rsp
-	mov rcx, rsp ; parameters are fun
+	mov rcx, rsp ; rsp to first param
 	call RtlCaptureContext ; capture the thread's context
 	
 	sub rsp, 32 ; shadow stack space
-	call Hooker ; call our callback which will restore context and go back to where we want
+	call Hooker ; call our func
 	
 	int 3 ; we should not be here.
