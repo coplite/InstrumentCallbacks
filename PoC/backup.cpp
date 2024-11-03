@@ -105,7 +105,7 @@ int main()
 	Sleep(1000);
 	
 	LARGE_INTEGER interval;
-	interval.QuadPart = -(1e7);
+	interval.QuadPart = -(1e7); // sleep for 1 second
 	
-	NtDelayExecution(false, &interval);
+	NtDelayExecution(false, &interval); // this should trigger since its an invocation of direct syscalls
 }
