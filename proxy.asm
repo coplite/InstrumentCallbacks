@@ -2,9 +2,7 @@ section .text
 	extern Hooker
 	extern RtlCaptureContext
 	global proxy
-	
 proxy:	
-    ; credits to https://gist.github.com/esoterix/df38008568c50d4f83123e3a90b62ebb
     mov gs:[0x2e0], rsp ; Win10 TEB InstrumentationCallbackPreviousSp
     mov gs:[0x2d8], r10 ; Win10 TEB InstrumentationCallbackPreviousPc
 	
