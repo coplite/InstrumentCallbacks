@@ -9,3 +9,5 @@ counter
 You can use it for injection by setting the callback on external process which points shellcode that same remote process
 
 refs: idk i pulled ts outta my rear end :p
+
+![image](https://github.com/user-attachments/assets/5df43fa1-fcbf-402d-a726-2d41ed0f58dc)
